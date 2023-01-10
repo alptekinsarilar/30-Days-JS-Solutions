@@ -24,7 +24,7 @@ console.log(is_valid_variable("firstname"));
  */
 
 // Level 2
-const tenMostFrequentWords = (text) => {
+/* const tenMostFrequentWords = (text) => {
   let pattern = /\w+/g;
   let words = text.match(pattern);
   const map = new Map();
@@ -54,4 +54,44 @@ const tenMostFrequentWords = (text) => {
 };
 
 let paragraph = `I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`;
-console.log(tenMostFrequentWords(paragraph));
+console.log(tenMostFrequentWords(paragraph)); */
+
+// Level 3
+const cleanText = (text) => {
+  return text.replace(/[%$#@&;!]/g, "");
+};
+
+let sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
+let cleanedText = cleanText(sentence);
+console.log(cleanedText);
+
+const mostFrequentWords = (text, n) => {
+  let pattern = /\w+/g;
+  let words = text.match(pattern);
+  const map = new Map();
+  words.forEach((word) => {
+    if (map.get(word)) {
+      map.set(word, map.get(word) + 1);
+    } else {
+      map.set(word, 1);
+    }
+  });
+
+  const result = [];
+
+  for (const [key, value] of map) {
+    result.push({ word: key, count: value });
+  }
+
+  result
+    .sort((a, b) => {
+      if (a.count > b.count) return 1;
+      else if (a.count < b.count) return -1;
+      return 0;
+    })
+    .reverse();
+
+  return result.slice(0, n);
+};
+
+console.log(mostFrequentWords(cleanedText, 5));
