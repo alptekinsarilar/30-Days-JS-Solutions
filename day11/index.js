@@ -53,11 +53,22 @@ const users = [
 ];
 
 // Level 1
-const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
+/* const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
 console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp);
 
 const [fin, est, sw, den, nor] = countries;
 console.log(fin, est, sw, den, nor);
 
 const { width, height, area, perimeter } = rectangle;
-console.log(width, height, area, perimeter);
+console.log(width, height, area, perimeter); */
+
+// Level 2
+for (const { name, scores, skills, age } of users) {
+  console.log(name, scores, skills, age);
+}
+
+for (const { name, scores, skills, age } of users) {
+  if (skills.length < 2) {
+    console.log(`${name} has less than 2 skills.`);
+  }
+}
