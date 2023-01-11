@@ -113,4 +113,29 @@ console.log(JSON.stringify(isMarried, undefined, 4));
 console.log(JSON.stringify(student, undefined, 4)); */
 
 // Level 2
-console.log(JSON.stringify(student, ["firstName", "lastName", "skills"], 4));
+/* console.log(JSON.stringify(student, ["firstName", "lastName", "skills"], 4)); */
+
+// Level 3
+console.log(JSON.parse(txt));
+
+const findMostSkilled = (txt) => {
+  let obj = JSON.parse(txt);
+  let maxCount = 0;
+  for (const student in obj) {
+    if (maxCount < obj[student].skills.length) {
+      maxCount = obj[student].skills.length;
+    }
+  }
+
+  let mostSkilledPerson;
+
+  for (const student in obj) {
+    if (maxCount === obj[student].skills.length) {
+      mostSkilledPerson = student;
+    }
+  }
+
+  return mostSkilledPerson;
+};
+
+console.log(findMostSkilled(txt));
