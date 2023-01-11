@@ -107,7 +107,10 @@ const txt = `{
 `;
 
 // Level 1
-console.log(JSON.stringify(skills, undefined, 4));
+/* console.log(JSON.stringify(skills, undefined, 4));
 console.log(JSON.stringify(age, undefined, 4));
 console.log(JSON.stringify(isMarried, undefined, 4));
-console.log(JSON.stringify(student, undefined, 4));
+console.log(JSON.stringify(student, undefined, 4)); */
+
+// Level 2
+console.log(JSON.stringify(student, ["firstName", "lastName", "skills"], 4));
