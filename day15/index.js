@@ -38,7 +38,7 @@ let cat = new Cat("Mirmir", 7, "orange", 4);
 cat.walk();
  */
 
-class Statistics {
+/* class Statistics {
   constructor(sample) {
     this.sample = sample;
   }
@@ -143,3 +143,62 @@ console.log("Mode:", statistics.mode());
 console.log("Variance:", statistics.var());
 console.log("Standard Deviation: ", statistics.std());
 console.log("Frequency Distribution:", statistics.freqDist());
+ */
+
+class PersonAccount {
+  constructor(firstName, lastName, incomes, expenses) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.incomes = incomes;
+    this.expenses = expenses;
+  }
+
+  accountInfo() {
+    let fullName = this.firstName + " " + this.lastName;
+    let incomes =
+      this.incomes.length > 0 &&
+      this.incomes.slice(0, this.incomes.length - 1).join(", ") +
+        ` and ${this.incomes[this.incomes.length - 1]}`;
+
+    let formattedIncomes = incomes ? `He has incomes as ${incomes}` : "";
+    let pronoun = this.gender == "Male" ? "His" : "Her";
+
+    let info = `${pronoun} name is ${fullName}. ${formattedIncomes}`;
+    return info;
+  }
+
+  totalIncome() {
+    return this.incomes.reduce(
+      (totalIncome, income) => (totalIncome += income),
+      0
+    );
+  }
+
+  totalExpenses() {
+    return this.expenses.reduce(
+      (totalExpense, expense) => (totalExpense += expense),
+      0
+    );
+  }
+
+  set addIncome(income) {
+    this.incomes.push(income);
+  }
+
+  set addExpense(expense) {
+    this.expenses.push(expense);
+  }
+
+  accountBalance() {
+    return;
+  }
+}
+
+const p1 = new PersonAccount(
+  "Alptekin",
+  "Sarilar",
+  [1250, 1750],
+  [500, 300, 200]
+);
+
+//...
