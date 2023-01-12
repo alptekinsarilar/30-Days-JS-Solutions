@@ -3,7 +3,7 @@ const countriesAPI = "https://restcountries.com/v2/all";
 const catsAPI = "https://api.thecatapi.com/v1/breeds";
 
 // Level 1
-const readCountries = async () => {
+/* const readCountries = async () => {
   try {
     const response = await fetch(countriesAPI);
     const countries = await response.json();
@@ -17,4 +17,22 @@ const readCountries = async () => {
   }
 };
 
-readCountries();
+readCountries(); */
+
+// Level 2
+const printCats = async () => {
+  try {
+    const response = await fetch(catsAPI);
+    const cats = await response.json();
+    let catNames = [];
+    for (const cat of cats) {
+      catNames.push(cat.name);
+      console.log(cat.name);
+    }
+    return catNames;
+  } catch (errorMessage) {
+    console.error(errorMessage);
+  }
+};
+
+const catNames = printCats();
