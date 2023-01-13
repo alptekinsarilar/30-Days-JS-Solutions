@@ -1,0 +1,33 @@
+body {
+    position: relative;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    width: calc(100% - 5px);
+}
+
+h1, p{
+    text-align: center;
+    margin: auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.country {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 100px;
+    height: 50px;
+    flex-basis: calc(16.6% - 5px);
+}
+
+#total-num {
+    font-weight: bold;
+}
