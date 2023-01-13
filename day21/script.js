@@ -20,3 +20,19 @@ p3.id = "para3";
 p4.setAttribute("id", "para4");
 
 console.log(p1);
+
+// Level 2
+p1.style.fontSize = "20px";
+p2.style.margin = "10px";
+p3.style.fontSize = "30px";
+
+allP.forEach((p, i) => {
+  if (i % 2 === 0) {
+    p.style.color = "lightgreen";
+  } else {
+    p.style.color = "crimson";
+  }
+});
+
+p3.textContent = "Günaydın";
+p4.textContent = "'Günaydın' means 'Good Morning' in Turkish";
