@@ -1,0 +1,30 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.text-container {
+    text-align: center;
+    margin: 0 auto;
+    width: 700px;
+    min-width: 500px;
+    padding: 0 15px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.number-container {
+    border: 1px solid black;
+    margin: 25px auto;
+    padding: 50px;
+    height: 50px;
+    color: limegreen;
+    display: none;
+}
